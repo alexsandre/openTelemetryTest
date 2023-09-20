@@ -22,6 +22,7 @@ otel.ConfigureResource(resource => resource.AddService(serviceName: builder.Envi
 otel.WithMetrics(metrics => 
     metrics
     .AddAspNetCoreInstrumentation()
+    .AddHttpClientInstrumentation()
     .AddMeter("Microsoft.AspNetCore.Hosting")
     .AddMeter("Microsoft.AspNetCore.Server.Kestrel")
     .AddPrometheusExporter());
